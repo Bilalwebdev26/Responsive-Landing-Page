@@ -1,0 +1,38 @@
+import React from 'react'
+import { CheckCircle2 } from 'lucide-react'
+import { pricingOptions } from '../constants/index'
+const Pricing = () => {
+  return (
+    <div className='mt-20  border-b'>
+      <h2 className='bg-gradient-to-r from-orange-500 to-red-800  text-3xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text py-8 text-center'>Pricing</h2>
+      <div className="flex flex-wrap mb-5">
+        {pricingOptions.map((pricing,index)=>(
+            <div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-2">
+                  <div className="p-10 border border-neutral-700 rounded-xl ">
+                    <p className='text-4xl mb-8'>{pricing.title}
+                    {pricing.title === "Pro" && (<span className='bg-gradient-to-r from-orange-500 to-red-800 text-xl bg-clip-text mb-4 ml-2 text-transparent'>(Most Popular)</span>)}</p>
+                    <p className='mb-8'>
+                        <span className='text-5xl mt-6 mr-2'>{pricing.price}</span>
+                        <span className='text-neutral-500 tracking-tight'>/Month</span>
+                    </p>
+                    <ul>
+                        {pricing.features.map((feature,index)=>(
+                            <li key={index} className='mt-8 flex tracking-tight'>
+                                <div className="text-green-500">
+                                   <CheckCircle2/>
+                                </div>
+                                
+                                <span className='ml-2 '>{feature}</span>
+                            </li>
+                        ))}
+                    </ul>
+                    <a href="#" className='inline-flex justify-center items-center text-center w-full  h-12 border tracking-tight border-orange-900 rounded-lg text-xl transition duration-400 mt-8 hover:bg-gradient-to-r from-orange-500 to-red-800 hover:border-black '>Subscribe</a>
+                  </div>
+            </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default Pricing

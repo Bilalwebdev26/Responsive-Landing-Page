@@ -3,6 +3,9 @@ import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import Feature from './components/Feature.jsx'
 import Workzflow from './components/Workzflow.jsx'
+import Pricing from './components/Pricing.jsx'
+import Testimonials from './components/Testimonials.jsx'
+import Footer from './components/Footer.jsx'
 
 const App = () => {
   return (
@@ -12,6 +15,9 @@ const App = () => {
     <Hero/> 
     <Feature/>
     <Workzflow/>
+    <Pricing/>
+    <Testimonials/>
+    <Footer/>
     </div>
     </>
   )
