@@ -1,3 +1,17 @@
 {
-  "rewrites": [{ "source": "/{.*}", "destination": "/index.html" }]
+  "version": 2,
+  "name": "Landing Page",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
 }
